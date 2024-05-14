@@ -1,0 +1,35 @@
+.arrow {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    padding: 0 10px;
+}
+
+.switch_year {
+    display: flex;
+    justify-content: center;
+}
+
+.month {
+    width: 250px;
+    height: max-content;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.week_days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.week_days div {
+    width: 35px;
+    height: 15px;
+    font-size: 12px;
+}

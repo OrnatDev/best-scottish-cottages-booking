@@ -1,3 +1,7 @@
+import Calendar from "./components/calendar/calendar";
+
 export default function App() {
-	return <h1>Booking App</h1>
+	return <div>
+		<Calendar />
+	</div>
 }
