@@ -1,21 +1,93 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.switch_year {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .arrow {
     cursor: pointer;
     width: 25px;
     height: 25px;
     padding: 0 10px;
+    transition: transform 0.2s ease-in-out;
 }
 
-.switch_year {
-    display: flex;
-    justify-content: center;
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+select:hover {
+    background-color: #f0f0f0;
+}
+
+.swiper {
+    padding: 20px 0;
+}
+
+.swiper_slide {
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;
+    flex-direction: column !important;
+    height: 100% !important;
 }
 
 .month {
     width: 250px;
-    height: max-content;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 10px;
+}
+
+.month p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.week_days {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.week_days div {
+    width: 35px;
+    height: 20px;
+    font-size: 12px;
+    color: #666;
+    font-weight: 600;
 }
 
 .days {
@@ -23,13 +95,83 @@
     flex-wrap: wrap;
 }
 
-.week_days {
+.days div {
+    margin: 5px;
+    width: 25px;
+    height: 25px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.week_days div {
-    width: 35px;
-    height: 15px;
-    font-size: 12px;
+.days div:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #333;
+    transition: color 0.2s ease-in-out;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #000;
+}
+
+.swiper-pagination-bullet {
+    background-color: #ddd;
+    opacity: 1;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #333;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.modal:focus {
+    border: 0;
+}
+
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
