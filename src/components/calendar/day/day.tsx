@@ -1,16 +1,34 @@
 import React from "react";
 import "./style.css"
 
+type bookedDay = {
+    day: number,
+    month: string,
+    year: number
+}
+
 type dayProps = {
-    day: number | null
+    day: number | null,
+    openModal: () => void,
+    monthName: string | null,
+    bookedDays: bookedDay[] | null,
+    year: string
 }
 
 const Day = (props: dayProps) => {
-    const [bgColor, setBgColor] = React.useState<string>("white");
-    return <div
+
+    let bgColor = "white";
+
+    props.bookedDays !== null && props.bookedDays.map(item => {
+        if (props.day === item.day && props.monthName === item.month && parseInt(props.year) === item.year) {
+            bgColor = "red";
+        }
+    })
+
+    return props.day === null ? <div></div> : <div
         className="day"
         style={{ backgroundColor: bgColor, cursor: "pointer", color: bgColor === "white" ? "black" : "white" }}
-        onClick={() => setBgColor(bgColor === "white" ? "green" : "white")}>
+        onClick={props.openModal}>
         {props.day}
     </div>
 }
